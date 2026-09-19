@@ -1,0 +1,20 @@
+import { describe,expect,it } from "vitest";
+import { calculateBreakdown,calculateFinanceTotals,decimalRatio,remaining,variance } from "@/features/finance/calculations";
+import { costSchema,moneyValues } from "@/features/finance/schemas";
+import type { ActualExpense,Adjustment,CostItem,Payment } from "@/features/finance/types";
+
+const cost=(overrides:Partial<CostItem>={}):CostItem=>({id:"c1",tripId:"t1",categoryId:"cat1",title:"Hotel",scopeType:"trip",stopId:null,travelLegId:null,estimatedOriginalMinor:"10000",estimatedCurrency:"EUR",estimatedBaseMinor:"10000",estimatedConversionRate:"1",committedOriginalMinor:null,committedCurrency:null,committedBaseMinor:null,committedConversionRate:null,notes:null,archivedAt:null,...overrides});
+const payment=(overrides:Partial<Payment>={}):Payment=>({id:"p1",tripId:"t1",costItemId:"c1",amountOriginalMinor:"4000",currency:"EUR",baseAmountMinor:"4000",conversionRate:"1",paidOn:"2026-08-31",notes:null,createdAt:"2026-08-31T10:00:00Z",...overrides});
+const actual=(overrides:Partial<ActualExpense>={}):ActualExpense=>({id:"a1",tripId:"t1",costItemId:"c1",categoryId:"cat1",title:null,scopeType:"trip",stopId:null,travelLegId:null,amountOriginalMinor:"9000",currency:"EUR",baseAmountMinor:"9000",conversionRate:"1",spentOn:"2026-08-01",notes:null,createdAt:"2026-08-01T10:00:00Z",...overrides});
+const adjustment=(overrides:Partial<Adjustment>={}):Adjustment=>({id:"r1",tripId:"t1",paymentId:"p1",actualExpenseId:null,amountOriginalMinor:"-1000",currency:"EUR",baseAmountMinor:"-1000",conversionRate:"1",adjustedOn:"2026-08-31",notes:"Reembolso",createdAt:"2026-08-31T11:00:00Z",...overrides});
+
+describe("finance rules",()=>{
+ it("uses committed before estimated without double counting",()=>{const totals=calculateFinanceTotals([cost({committedBaseMinor:"8000",committedOriginalMinor:"8000",committedCurrency:"EUR",committedConversionRate:"1"})],[],[],[]);expect(totals.estimated).toBe(10000n);expect(totals.committed).toBe(8000n);expect(totals.forecast).toBe(8000n);});
+ it("keeps partial payments and actual expenses separate",()=>{const totals=calculateFinanceTotals([cost()],[payment(),payment({id:"p2",baseAmountMinor:"2500"})],[actual()],[]);expect(totals.paid).toBe(6500n);expect(totals.actual).toBe(9000n);});
+ it("applies negative adjustments while preserving originals",()=>{const totals=calculateFinanceTotals([],[payment()],[actual()],[adjustment(),adjustment({id:"r2",paymentId:null,actualExpenseId:"a1",baseAmountMinor:"-2000"})]);expect(totals.paid).toBe(3000n);expect(totals.actual).toBe(7000n);});
+ it("distinguishes zero from missing and supports target overrun",()=>{expect(calculateFinanceTotals([cost({estimatedBaseMinor:"0"}),cost({id:"c2",estimatedBaseMinor:null,estimatedOriginalMinor:null,estimatedCurrency:null,estimatedConversionRate:null})],[],[],[]).forecast).toBe(0n);expect(remaining("5000",7000n)).toBe(-2000n);expect(variance(null,"0")).toBeNull();});
+ it("aggregates each scoped item exactly once",()=>{const result=calculateBreakdown([cost({scopeType:"stop",stopId:"s1"})],[actual({scopeType:"stop",stopId:"s1"})],[],"stopId");expect(result.get("s1")).toEqual({forecast:10000n,actual:9000n});});
+ it("derives exact rate across currencies with different minor digits",()=>{expect(decimalRatio(600n,1000n,2,0)).toBe("0.006");});
+ it("accepts zero and rejects negative or inconsistent money",()=>{expect(moneyValues({amount:"0",currency:"EUR",baseAmount:""},"EUR",true)?.original).toBe(0n);expect(moneyValues({amount:"-1",currency:"EUR",baseAmount:""},"EUR",true)).toBeNull();expect(moneyValues({amount:"0",currency:"USD",baseAmount:"1"},"EUR",true)).toBeNull();});
+ it("rejects an invalid currency code",()=>{const result=costSchema.safeParse({title:"Hotel",categoryId:"10000000-0000-4000-8000-000000000001",scopeType:"trip",scopeId:"",estimatedAmount:"0",estimatedCurrency:"EURO",estimatedBaseAmount:"",committedAmount:"",committedCurrency:"EUR",committedBaseAmount:"",notes:"",requestId:"20000000-0000-4000-8000-000000000001"});expect(result.success).toBe(false);});
+});

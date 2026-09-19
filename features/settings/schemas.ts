@@ -1,0 +1,3 @@
+import{z}from"zod";import{SUPPORTED_CURRENCIES,SUPPORTED_LOCALES}from"@/features/auth/options";
+export const accountSettingsSchema=z.object({displayName:z.string().trim().min(1,"Introduza o seu nome.").max(80,"O nome pode ter no máximo 80 caracteres."),defaultCurrency:z.enum(SUPPORTED_CURRENCIES,"Selecione uma moeda suportada."),locale:z.enum(SUPPORTED_LOCALES.map(x=>x.value)as["pt-PT","en-GB"]),updatedAt:z.string().datetime()});
+export const tripPreferencesSchema=z.object({travelersCount:z.coerce.number().int("Introduza um número inteiro.").min(1,"A viagem deve ter pelo menos 1 viajante."),baseCurrency:z.enum(SUPPORTED_CURRENCIES,"Selecione uma moeda suportada."),updatedAt:z.string().datetime()});

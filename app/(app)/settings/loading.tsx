@@ -1,0 +1,1 @@
+export default function SettingsLoading(){return <main className="min-h-screen bg-background px-5 py-8"><div aria-busy="true" aria-label="A carregar definições" className="mx-auto max-w-3xl animate-pulse"><div className="h-8 w-32 rounded bg-muted"/><div className="mt-8 h-64 rounded-feature bg-muted"/></div></main>}

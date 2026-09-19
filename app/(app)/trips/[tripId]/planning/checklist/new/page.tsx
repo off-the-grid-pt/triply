@@ -1,0 +1,2 @@
+import { notFound } from "next/navigation";import { ChecklistForm } from "@/features/planning/components/forms";import { getOwnedRoute } from "@/features/route/queries";import { Shell } from "@/features/planning/components/form-shell";
+export default async function Page({params}:PageProps<"/trips/[tripId]/planning/checklist/new">){const{tripId}=await params,route=await getOwnedRoute(tripId);if(!route)notFound();return <Shell tripId={tripId} title="Adicionar tarefa"><ChecklistForm tripId={tripId} stops={route.stops}/></Shell>}

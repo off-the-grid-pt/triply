@@ -1,0 +1,2 @@
+import type{CurrencyCode}from"@/features/trips/types";
+export type AccountSettings={displayName:string;defaultCurrency:CurrencyCode;locale:"pt-PT"|"en-GB";updatedAt:string};export type TripPreferenceData={hasFinancialData:boolean;updatedAt:string};export type SettingsActionState={status:"idle"|"error";message?:string;fieldErrors?:Record<string,string>;values?:Record<string,string>};export const initialSettingsState:SettingsActionState={status:"idle"};

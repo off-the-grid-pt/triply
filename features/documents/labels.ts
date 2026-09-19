@@ -1,0 +1,2 @@
+import type { DocumentType } from "./types";
+export const documentTypeLabels:Record<DocumentType,string>={passport:"Passaporte",national_id:"Documento de identificação",visa:"Visto",travel_insurance:"Seguro de viagem",health_document:"Documento de saúde",ticket_or_boarding_pass:"Bilhete ou cartão de embarque",accommodation_voucher:"Voucher de alojamento",reservation_voucher:"Voucher de reserva",driver_document:"Documento de condução",rental_document:"Documento de aluguer",other:"Outro"};

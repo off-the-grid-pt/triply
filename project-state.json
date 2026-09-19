@@ -1,0 +1,787 @@
+{
+  "project": "Triply",
+  "version": "0.1",
+  "mode": "autonomous_with_gates",
+  "last_updated": "2026-09-01T00:45:00+01:00",
+  "current_module": "01-auth-onboarding",
+  "current_stage": "architecture",
+  "status": "repository_bootstrapped_dependencies_pending",
+  "spec_gate": "open_all_mvp_specs_approved",
+  "modules": {
+    "01-auth-onboarding": {
+      "name": "Authentication & Onboarding",
+      "spec": "spec/01-auth-onboarding.md",
+      "dependencies": [],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "02-trips": {
+      "name": "Trips",
+      "spec": "spec/02-trips.md",
+      "dependencies": [
+        "01-auth-onboarding"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "03-destinations-legs": {
+      "name": "Destinations & Travel Legs",
+      "spec": "spec/03-destinations-legs.md",
+      "dependencies": [
+        "02-trips"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "04-budget-expenses": {
+      "name": "Budget & Expenses",
+      "spec": "spec/04-budget-expenses.md",
+      "dependencies": [
+        "02-trips",
+        "03-destinations-legs"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "05-savings-plan": {
+      "name": "Savings Plan",
+      "spec": "spec/05-savings-plan.md",
+      "dependencies": [
+        "04-budget-expenses"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "06-itinerary": {
+      "name": "Daily Itinerary",
+      "spec": "spec/06-itinerary.md",
+      "dependencies": [
+        "02-trips",
+        "03-destinations-legs"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "07-reservations-checklists": {
+      "name": "Reservations & Checklists",
+      "spec": "spec/07-reservations-checklists.md",
+      "dependencies": [
+        "03-destinations-legs",
+        "06-itinerary"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "08-documents": {
+      "name": "Documents",
+      "spec": "spec/08-documents.md",
+      "dependencies": [
+        "02-trips",
+        "07-reservations-checklists"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "09-dashboard": {
+      "name": "Dashboard",
+      "spec": "spec/09-dashboard.md",
+      "dependencies": [
+        "03-destinations-legs",
+        "04-budget-expenses",
+        "05-savings-plan",
+        "06-itinerary",
+        "07-reservations-checklists",
+        "08-documents"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    },
+    "10-settings-preferences": {
+      "name": "Settings & Trip Preferences",
+      "spec": "spec/10-settings-preferences.md",
+      "dependencies": [
+        "01-auth-onboarding"
+      ],
+      "status": "spec_approved",
+      "stages": {
+        "architecture": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "design": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "database": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "backend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "frontend": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        },
+        "qa": {
+          "status": "pending",
+          "runDir": null,
+          "score": null,
+          "validation": null,
+          "repairAttempts": 0,
+          "approvedAt": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "security_milestones": [
+    {
+      "after": "01-auth-onboarding",
+      "status": "pending"
+    },
+    {
+      "after": "08-documents",
+      "status": "pending"
+    },
+    {
+      "after": "all-modules",
+      "status": "pending"
+    }
+  ],
+  "decisions_log": [
+    {
+      "date": "2026-08-31",
+      "module": "06-itinerary",
+      "decision": "Product owner approved Module 06 specification and P06 decisions."
+    },
+    {
+      "date": "2026-09-01",
+      "module": "07-reservations-checklists",
+      "decision": "Product owner approved Module 07 specification and P07 decisions."
+    },
+    {
+      "date": "2026-09-01",
+      "module": "08-documents",
+      "decision": "Product owner approved Module 08 specification and P08 decisions."
+    },
+    {
+      "date": "2026-09-01",
+      "module": "09-dashboard",
+      "decision": "Product owner approved Module 09 specification and P09 decisions."
+    },
+    {
+      "date": "2026-09-01",
+      "module": "10-settings-preferences",
+      "decision": "Product owner approved Module 10 specification and P10 decisions."
+    },
+    {
+      "date": "2026-09-01",
+      "module": "global",
+      "decision": "All MVP product module specs are approved. ADR-001 through ADR-005 form the accepted technical baseline; execution cursor moved to Module 01 architecture."
+    },
+    {
+      "date": "2026-09-07",
+      "module": "visual-redesign",
+      "decision": "Owner requested and authorized adaptation of the Notion dark reference throughout Triply and layout research using existing 21st.dev integration. Existing Cursor MCP was verified and four component previews informed implementation. No functional specs, data model, auth or dependencies changed."
+    },
+    {
+      "date": "2026-09-07",
+      "module": "01-auth-onboarding",
+      "decision": "Owner explicitly requested removal of mandatory email verification. Spec v1.1 amendment approved by that request. App gate and resend UI removed; password session validation, onboarding ownership, RLS and password recovery retained. Hosted provider setting still requires owner action because only public project credentials are available."
+    }
+  ],
+  "git_log": [],
+  "repository_bootstrap": {
+    "status": "structure_complete_dependencies_pending",
+    "package_lock": false,
+    "dependency_installation": false,
+    "validated": false,
+    "notes": "Run npm install and bootstrap validation commands on a machine with npm registry access before agent execution."
+  },
+  "visual_redesign": {
+    "status": "implemented_and_validated",
+    "completed_at": "2026-09-07T08:26:37.156978+00:00",
+    "design_system": "spec/00-design-system.md",
+    "implementation_plan": "docs/implementation-plans/11-visual-redesign.md",
+    "catalogue_route": "/design-system",
+    "reference": "https://design.aioxsquad.ai/design/notion_getdesign?tag=dark",
+    "references_21st_demo_ids": [
+      14941,
+      7957,
+      8253,
+      5157
+    ],
+    "validation": {
+      "typecheck": "pass",
+      "build": "pass",
+      "unit_tests": {
+        "passed": 126,
+        "failed": 0
+      },
+      "e2e_tests": {
+        "passed": 7,
+        "failed": 0
+      },
+      "harness_tests": {
+        "passed": 86,
+        "failed": 0
+      },
+      "lint": {
+        "errors": 0,
+        "preexisting_warnings": 14
+      },
+      "responsive_widths": [
+        375,
+        768,
+        1440
+      ]
+    },
+    "limitations": [
+      "Authenticated end-to-end flows not exercised with a live account; public catalogue uses synthetic data and real presentation components.",
+      "Workspace has no Git repository; no commit or deployment was performed."
+    ],
+    "notes": "Visual work recorded independently; historical module lifecycle/bootstrap status has not been retroactively marked complete."
+  },
+  "email_confirmation_change": {
+    "status": "code_validated_provider_configuration_pending",
+    "spec": "spec/01-auth-onboarding.md",
+    "plan": "docs/implementation-plans/12-email-confirmation.md",
+    "provider_last_observed": {
+      "mailer_autoconfirm": false,
+      "http_status": 200
+    },
+    "required_external_action": "Disable Confirm email in the Supabase Email provider and save. Verify mailer_autoconfirm true before claiming end-to-end completion.",
+    "validation": {
+      "typecheck": "pass",
+      "build": "pass",
+      "unit_tests_passed": 138,
+      "e2e_tests_passed": 9,
+      "harness_tests_passed": 86,
+      "lint_errors": 0,
+      "preexisting_lint_warnings": 14
+    },
+    "live_account_login_verified": false
+  }
+}

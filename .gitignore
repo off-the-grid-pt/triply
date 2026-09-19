@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+.env*
+!.env.example
+*.log
+.DS_Store
+.vercel/
+*.tsbuildinfo
+harness/runs/*
+!harness/runs/.gitignore
+.vercel

@@ -1,0 +1,17 @@
+"use client";
+import { useActionState } from "react";
+import { createStopAction, updateStopAction } from "../actions";
+import { initialRouteActionState, type StopFormValues } from "../types";
+import { IANA_TIMEZONES } from "../timezones";
+const input="h-12 w-full rounded-control border border-input bg-card px-4 outline-none focus:border-ring focus:ring-2 focus:ring-ring/10";
+export function StopForm({tripId,stopId,initial}:{tripId:string;stopId?:string;initial:StopFormValues}){
+ const action=stopId?updateStopAction.bind(null,tripId,stopId):createStopAction.bind(null,tripId);const[state,formAction,pending]=useActionState(action,{...initialRouteActionState,values:initial});const values=(state.values&&"placeName" in state.values?state.values:initial);
+ return <form key={JSON.stringify(values)} action={formAction} className="space-y-5" noValidate><input type="hidden" name="createRequestId" value={values.createRequestId}/>
+  <Field name="placeName" label="Cidade ou local" value={values.placeName} error={state.fieldErrors?.placeName} required/>
+  <div className="grid gap-5 sm:grid-cols-2"><Field name="countryName" label="País" value={values.countryName} error={state.fieldErrors?.countryName} required/><Field name="countryCode" label="Código do país" value={values.countryCode} error={state.fieldErrors?.countryCode} maxLength={4} placeholder="PT" required/></div>
+  <div className="grid gap-5 sm:grid-cols-2"><Field name="arrivalDate" label="Chegada" type="date" value={values.arrivalDate} error={state.fieldErrors?.arrivalDate} required/><Field name="departureDate" label="Partida" type="date" value={values.departureDate} error={state.fieldErrors?.departureDate} required/></div>
+  <div><label htmlFor="timezone" className="mb-2 block text-sm font-medium">Timezone (opcional)</label><select id="timezone" name="timezone" defaultValue={values.timezone} className={input}><option value="">Selecionar timezone</option>{IANA_TIMEZONES.map((timezone)=><option key={timezone} value={timezone}>{timezone}</option>)}</select>{state.fieldErrors?.timezone?<p className="mt-2 text-sm text-destructive">{state.fieldErrors.timezone}</p>:null}</div><div><label htmlFor="notes" className="mb-2 block text-sm font-medium">Notas (opcional)</label><textarea id="notes" name="notes" defaultValue={values.notes} maxLength={2000} rows={4} className="w-full rounded-control border border-input p-4"/></div>
+  {state.message?<p role="alert" className="rounded-control border border-destructive bg-destructive-muted p-4 text-sm text-destructive">{state.message}</p>:null}<button disabled={pending} className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground disabled:opacity-60">{pending?"A guardar…":stopId?"Guardar destino":"Adicionar destino"}</button>
+ </form>;
+}
+function Field({name,label,value,error,type="text",required,maxLength,placeholder}:{name:string;label:string;value:string;error?:string;type?:string;required?:boolean;maxLength?:number;placeholder?:string}){return <div><label htmlFor={name} className="mb-2 block text-sm font-medium">{label}{required?" *":""}</label><input id={name} name={name} type={type} defaultValue={value} required={required} maxLength={maxLength} placeholder={placeholder} aria-invalid={Boolean(error)} className={input}/>{error?<p className="mt-2 text-sm text-destructive">{error}</p>:null}</div>}
