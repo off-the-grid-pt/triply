@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  distDir: process.env.TRIPLY_E2E === "1" ? ".next-e2e" : ".next",
   reactStrictMode: true,
   experimental: {
     serverActions: {
